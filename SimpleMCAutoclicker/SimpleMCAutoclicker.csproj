@@ -9,10 +9,33 @@
     <StartupObject>SimpleMCAutoclicker.Program</StartupObject>
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Title>Simple MC Autoclicker</Title>
+    <Authors>IslamZaoui</Authors>
+    <Company>IslamZaoui</Company>
+    <Product>Simple MC Autoclicker</Product>
+    <Description>yet another Minecraft autoclicker made with .net8 winforms</Description>
+    <Copyright>MIT license</Copyright>
+    <PackageProjectUrl>https://github.com/IslamZaoui/SimpleMCAutoclicker</PackageProjectUrl>
+    <PackageIcon>image (2).png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/IslamZaoui/SimpleMCAutoclicker</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>autoclicker</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\..\Downloads\image (2).png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
