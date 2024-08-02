@@ -53,7 +53,7 @@
             attackbtnbox.FormattingEnabled = true;
             attackbtnbox.IntegralHeight = false;
             attackbtnbox.ItemHeight = 43;
-            attackbtnbox.Items.AddRange(new object[] { "Left", "Right" });
+            attackbtnbox.Items.AddRange(new object[] { "left", "right" });
             attackbtnbox.Location = new Point(302, 91);
             attackbtnbox.Margin = new Padding(4, 3, 4, 3);
             attackbtnbox.MaxDropDownItems = 4;
@@ -62,6 +62,7 @@
             attackbtnbox.Size = new Size(135, 49);
             attackbtnbox.StartIndex = 0;
             attackbtnbox.TabIndex = 2;
+            attackbtnbox.SelectedIndexChanged += attackbtnbox_SelectedIndexChanged;
             // 
             // CPSTrackBar
             // 

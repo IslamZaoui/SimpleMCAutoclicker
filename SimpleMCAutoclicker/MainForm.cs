@@ -1,7 +1,6 @@
 using MaterialSkin.Controls;
 using System.Diagnostics;
 using System.Text;
-using System.Windows.Forms;
 
 namespace SimpleMCAutoclicker
 {
@@ -58,7 +57,6 @@ namespace SimpleMCAutoclicker
         {
             InitializeComponent();
             new MaterialSettings(this);
-            attackbtnbox.SelectedIndex = 1;
 
             settingsManager = new SettingsManager();
             notifyIconManager = new NotifyIconManager(this);
@@ -113,8 +111,8 @@ namespace SimpleMCAutoclicker
             {
                 NativeMethods.SetForegroundWindow(hWnd);
 
-                uint downMsg = attackbtnbox.Text.Equals("left") ? NativeMethods.WM_LBUTTONDOWN : NativeMethods.WM_RBUTTONDOWN;
-                uint upMsg = attackbtnbox.Text.Equals("left") ? NativeMethods.WM_LBUTTONUP : NativeMethods.WM_RBUTTONUP;
+                uint downMsg = attackbtnbox.Text.ToLower().Equals("left") ? NativeMethods.WM_LBUTTONDOWN : NativeMethods.WM_RBUTTONDOWN;
+                uint upMsg = attackbtnbox.Text.ToLower().Equals("left") ? NativeMethods.WM_LBUTTONUP : NativeMethods.WM_RBUTTONUP;
 
                 NativeMethods.PostMessage(hWnd, downMsg, IntPtr.Zero, IntPtr.Zero);
                 NativeMethods.PostMessage(hWnd, upMsg, IntPtr.Zero, IntPtr.Zero);
@@ -182,6 +180,11 @@ namespace SimpleMCAutoclicker
         private void EnableSwitch_CheckedChanged(object sender, EventArgs e)
         {
             isEnabled = EnableSwitch.Checked;
+        }
+
+        private void attackbtnbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            settingsManager.SaveSettings(this);
         }
     }
 }
